@@ -10,8 +10,17 @@
 
   <body>
     <div class="container">
-      <%= notice %>
-      <%= yield %>
-  </div>
+      <div class="row">
+        <div class="col-sm-2" id="nav">
+          <p>課本範例練習</P>
+          <%= link_to 'candidates', candidates_path %><br>
+          <%= link_to 'BMI', bmi_path %>
+        </div>
+        <div class="col-sm-10">
+          <%= notice %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

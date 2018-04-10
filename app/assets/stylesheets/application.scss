@@ -13,3 +13,11 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ #nav {
+   background-color: #eeeeee;
+   height: 300%;
+ }
+ #nav a {
+ 	text-decoration:none;
+ }
