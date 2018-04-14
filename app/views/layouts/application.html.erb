@@ -12,13 +12,15 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-2" id="nav">
-          <%= link_to '關於我', root_path %><br>
-          <p>課本範例練習</P>
-          <%= link_to 'products', products_path %><br>
-          <%= link_to 'candidates', candidates_path %><br>
-          <%= link_to 'BMI', bmi_path %>
+          <%= link_to '<p>&nbsp&nbsp關於我</p>'.html_safe, root_path %>
+          <p class="title">&nbsp&nbsp個人練習</P>
+          <%= link_to '<p>&nbsp&nbsp&nbsp留言板</p>'.html_safe, candidates_path %>
+          <p class="title">&nbsp&nbsp課本範例練習</P>
+          <%= link_to '<p>&nbsp&nbsp&nbsp投票系統</p>'.html_safe, candidates_path %>
+          <%= link_to '<p>&nbsp&nbsp&nbsp購物車</p>'.html_safe, products_path %>
+          <%= link_to '<p>&nbsp&nbsp&nbspBMI</p>'.html_safe, bmi_path %>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-10" id="content">
           <%= notice %>
           <%= yield %>
         </div>
