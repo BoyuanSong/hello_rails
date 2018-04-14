@@ -13,4 +13,11 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
+  resources :products
+
+  resource :cart, only:[:show, :destroy] do
+    collection do
+      post :add, path:'add/:id'
+    end
+  end
 end
