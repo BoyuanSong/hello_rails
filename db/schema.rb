@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412154407) do
+ActiveRecord::Schema.define(version: 20180415202729) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20180412154407) do
     t.string "name"
     t.string "email"
     t.string "tel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "visitors", force: :cascade do |t|
+    t.string "account"
+    t.string "pw"
+    t.string "name"
+    t.string "email"
+    t.boolean "isVerify", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

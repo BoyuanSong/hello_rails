@@ -1,0 +1,15 @@
+<%= form_for(visitor) do |f| %>
+  <%= f.label :account, "帳號 Account: " %>
+  <%= f.text_field :account %> <br />
+
+  <%= f.label :pw, "密碼 Pw: " %>
+  <%= f.text_field :pw %> <br />
+
+  <%= f.label :name, "姓名 name: " %>
+  <%= f.text_field :name %> <br />
+
+  <%= f.label :email, "信箱 email: " %>
+  <%= f.text_field :email %> <br />
+
+  <%= f.submit '送出資料' %>
+<% end %>

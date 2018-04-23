@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :visitors, only:[:index,:new, :create, :destroy] do
+      get :log, on: :collection
+      post :log_in, on: :collection
+      post :log_out, on: :collection
+    end
+  resources :comments
+
+
+
+
   get "bmi", to: "bmi#index"
   post "bmi/result", to: "bmi#result"
 

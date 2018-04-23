@@ -1,0 +1,19 @@
+<h1>新增訪客</h1>
+<br>
+<%= render "form", visitor: @visitor %>
+
+<br />
+<%= link_to '回訪客列表', visitors_path %>
+
+
+<% if @visitor.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @visitor.errors.count %> 個錯誤需要處理</h2>
+
+    <ul>
+    <% @visitor.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

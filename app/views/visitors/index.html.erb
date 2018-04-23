@@ -1,0 +1,28 @@
+<h1>訪客列表</h1>
+
+<%= link_to "新增訪客", new_visitor_path %><br><br>
+<%= link_to "訪客登入", log_visitors_path %><br><br>
+<%= link_to "登出", log_out_visitors_path %><br><br>
+
+<%= @user%>你好
+<table class="table">
+  <thead>
+    <tr>
+      <td>帳號</td>
+      <td>姓名</td>
+      <td>信箱</td>
+      <td>認證</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @visitors.each do |visitor| %>
+    <tr>
+      <td><%= visitor.account %></td>
+      <td><%= visitor.name %></td>
+      <td><%= visitor.email %></td>
+      <td><%= visitor.isVerify %></td>
+      <td><%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

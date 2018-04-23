@@ -1,0 +1,10 @@
+<h1>訪客登入</h1>
+
+<%= icon_link_to "回訪客列表", visitors_path, "knight" %>
+
+
+<%= form_tag '/visitors/log_in' do %>
+  帳號：<%= text_field_tag 'account' %><br />
+  密碼：<%= text_field_tag 'pw' %><br />
+  <%= submit_tag "登入" %>
+<% end %>
