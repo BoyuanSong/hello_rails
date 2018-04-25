@@ -27,7 +27,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -51,4 +51,14 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.mailgun.org',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'postmaster@sandboxedaa9a1c42024b67a68820953f4ce243.mailgun.org',
+    password:             '028002e026ad717c1e0eb98e4b6b6fcb-80bfc9ce-9d720ab6',
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 end

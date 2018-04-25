@@ -19,6 +19,13 @@ class VisitorsController < ApplicationController
     end
   end
 
+  def destroy
+    puts params
+    @visitor = Visitor.find_by(id: params[:id])
+    @visitor.destroy if @visitor
+    redirect_to visitors_path, notice: "訪客已刪除!"
+  end
+
   def log
   end
 
@@ -34,13 +41,6 @@ class VisitorsController < ApplicationController
   def log_out
     session[:user] = nil
     redirect_to visitors_path, notice: "登出"
-  end
-
-  def destroy
-    puts params
-    @visitor = Visitor.find_by(id: params[:id])
-    @visitor.destroy if @visitor
-    redirect_to visitors_path, notice: "訪客已刪除!"
   end
 
 end
