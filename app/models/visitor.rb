@@ -10,4 +10,20 @@ class Visitor < ApplicationRecord
   validates :name, length: { maximum: 5, message: "不可超過5個字"}
 
   validates :email, length: { maximum: 25, message: "不可超過25個字"}
+
+  def self.find_visitor(hash)
+    if hash.nil?
+      "未登入的訪客 "
+    else
+      hash["name"]
+    end
+  end
+
+  def serialize
+    { "name" => name, "id"  => id }
+  end
+
+  def get_pw
+    pw
+  end
 end

@@ -4,7 +4,9 @@
 <%= link_to "訪客登入", log_visitors_path %><br><br>
 <%= link_to "登出", log_out_visitors_path %><br><br>
 
-<%= @user%>你好
+<p><%= Visitor.find_visitor(session[:user])%>你好</p>
+<p>session: <%= session[:user]%></p>
+
 <table class="table">
   <thead>
     <tr>

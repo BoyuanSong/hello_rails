@@ -12,9 +12,8 @@ class VisitorsController < ApplicationController
     @visitor = Visitor.new(params.require(:visitor).permit(:account, :pw, :name, :email))
 
     if @visitor.save # 成功
-      redirect_to visitors_path, notice: "新增成功!"
+      redirect_to visitors_path, notice: "新增資料成功!"
     else # 失敗
-      flash[:errors] = @visitor.errors.full_messages
       render :new
     end
   end
@@ -30,17 +29,19 @@ class VisitorsController < ApplicationController
   end
 
   def log_in
-    if @user = Visitor.find_by(account: params[:account])
+    @user = Visitor.find_by(account: params[:account])
+    if  @user != nil and params[:pw] == @user.pw
       session[:user] = @user.serialize
       redirect_to visitors_path, notice: "登入成功!"
     else
+      @error = "請輸入正確的帳號密碼"
       render :log
     end
   end
 
   def log_out
     session[:user] = nil
-    redirect_to visitors_path, notice: "登出"
+    redirect_to visitors_path, notice: "登出成功"
   end
 
 end
