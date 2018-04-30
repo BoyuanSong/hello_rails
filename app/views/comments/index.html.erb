@@ -1,18 +1,11 @@
 <h1 class="page_title">留言板</h1>
 
-<%= link_to "訪客登入", log_visitors_path %><br><br>
-<%= link_to "登出", log_out_visitors_path %><br><br>
-
-<p><%= Visitor.find_visitor(session[:user])%>你好</p>
-
 <table class="table">
   <thead>
     <tr>
-      <td>編號</td>
+      <td>時間</td>
       <td>姓名</td>
       <td>留言</td>
-      <td>時間</td>
-      <td>刪除</td>
     </tr>
   </thead>
   <tbody>
