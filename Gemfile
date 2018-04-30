@@ -9,6 +9,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 
+
+gem 'aasm'
 gem 'kaminari'
 gem 'simple_form'
 # Use Puma as the app server

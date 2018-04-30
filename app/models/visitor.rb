@@ -1,4 +1,6 @@
 class Visitor < ApplicationRecord
+  has_many :comments
+
   validates :account, :name, :email, :pw, presence: { message: "不可為空白" }
 
   validates :account, :email, uniqueness: { message: "重複了請修改" }
@@ -13,7 +15,7 @@ class Visitor < ApplicationRecord
 
   def self.find_visitor(hash)
     if hash.nil?
-      "未登入的訪客 "
+      "訪客 "
     else
       hash["name"]
     end

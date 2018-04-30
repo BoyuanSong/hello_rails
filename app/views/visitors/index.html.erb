@@ -1,10 +1,5 @@
-<h1>訪客列表</h1>
+<h1 class="page_title">訪客列表</h1>
 
-<%= link_to "新增訪客", new_visitor_path %><br><br>
-<%= link_to "訪客登入", log_visitors_path %><br><br>
-<%= link_to "登出", log_out_visitors_path %><br><br>
-
-<p><%= Visitor.find_visitor(session[:user])%>你好</p>
 <p>session: <%= session[:user]%></p>
 
 <table class="table">
@@ -14,6 +9,7 @@
       <td>姓名</td>
       <td>信箱</td>
       <td>認證</td>
+      <td><%= link_to "新增訪客", new_visitor_path, class:"btn btn-primary btn-xs" %></td>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +19,7 @@
       <td><%= visitor.name %></td>
       <td><%= visitor.email %></td>
       <td><%= visitor.isVerify %></td>
-      <td><%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" } %></td>
+      <td><%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" }, class:"btn btn-danger btn-xs" %></td>
     </tr>
     <% end %>
   </tbody>
