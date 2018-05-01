@@ -10,16 +10,15 @@ class BmiController < ApplicationController
       @bmi = @bmi_calculator.perform
 
       if @bmi >= 0 && @bmi <= 18
-        @comment = "體重過輕了"
+        @comment = "體重過輕"
       elsif @bmi > 18 && @bmi <= 25
         @comment = "體重適中"
-      elsif @bmi > 25
-        @comment = "體重過重請注意身體健康"
+      elsif @bmi > 25 && @bmi <= 30
+        @comment = "體重過重"
       else
-        @comment = "請輸入正確的身高體重"
+        @comment = "請注意體重控制"
       end
     else
-      @msg = "請輸入身高體重"
       render :index
     end
   end

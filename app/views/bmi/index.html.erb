@@ -6,4 +6,18 @@
   <%= f.submit "開始計算" %>
 <% end %>
 <br>
-<%= @msg %>
+
+<p>這邊我做了兩種的驗證</p>
+<p>一種欄位是不可為空白</p>
+<p>另一種是用正規表示式來確認輸入的是正確的數字</p>
+<p>正規表示式的內容為 /\A[1-9]\d*\z/</p>
+<p>確認輸入的是非0開頭的數字</P>
+<p>應該沒寫錯吧?</p>
+<br>
+
+<div class="validate_errors">
+  <% if @bmi_calculator.errors.any? %>
+    <p><%= @bmi_calculator.errors[:body_height][0] %></p>
+    <p><%= @bmi_calculator.errors[:body_weight][0] %></p>
+  <% end %>
+</div>
