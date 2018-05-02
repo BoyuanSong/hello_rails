@@ -2,9 +2,9 @@
 <br>
 <%= render "form", visitor: @visitor %>
 
-<br />
-<%= link_to '回訪客列表', visitors_path %>
-
+<br/>
+<p>這邊我做了一些驗證處理</p>
+<p>欄位不可為空.帳號密碼需要6-12碼.信箱需要正確的格式</P>
 
 <% if @visitor.errors.any? %>
   <div id="error_explanation">
