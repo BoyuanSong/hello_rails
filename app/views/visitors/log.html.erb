@@ -1,11 +1,8 @@
 <h1 class="page_title">訪客登入</h1>
 
-<%= icon_link_to "回訪客列表", visitors_path, "knight" %>
-
-
 <%= form_tag '/visitors/log_in' do %>
-  帳號：<%= text_field_tag 'account' %><br />
-  密碼：<%= text_field_tag 'pw' %><br />
+  帳號：<%= text_field_tag 'account',nil ,maxlength: 12 %><br />
+  密碼：<%= password_field_tag 'pw', nil, maxlength: 12 %><br />
   <%= submit_tag "登入" %>
 <% end %>
 <%= @error%>

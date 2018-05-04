@@ -3,20 +3,28 @@
 <table class="table">
   <thead>
     <tr>
-      <td>時間</td>
-      <td>姓名</td>
-      <td>留言</td>
+      <th width=10%>姓名</th>
+      <th width=65%>留言</th>
+      <th width=20%>時間</th>
+      <th width=5%></th>
     </tr>
   </thead>
   <tbody>
     <% @comments.each do |comment| %>
     <tr>
-      <td><%= comment.id %></td>
-      <td><%= comment.name %></td>
+      <td><%= comment.visitor.name %></td>
       <td><%= comment.content %></td>
       <td><%= comment.created_at %></td>
-      <td><%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" } %></td>
+      <td><%= link_to "刪除", comment_path(comment), method: "delete", data: { confirm: "確認刪除" } if Visitor.find_visitor_account(session[:user]) == comment.visitor.account %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= form_for(@comment) do |f| %>
+  &nbsp&nbsp<%= Visitor.find_visitor(session[:user]) %><b> : </b>
+  <%= f.text_field :content ,size: 40, maxlength:35 %>
+  <%= f.submit '送出' , class:"btn btn-success btn-sm" %>
+  <%= link_to "登入", log_visitors_path, class:"btn btn-info btn-xs" %>
+  <%= link_to "註冊", new_visitor_path, class:"btn btn-primary btn-xs" %>
+<% end %>

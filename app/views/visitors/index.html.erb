@@ -1,7 +1,5 @@
 <h1 class="page_title">訪客列表</h1>
 
-<p>session: <%= session[:user]%></p>
-
 <table class="table">
   <thead>
     <tr>
@@ -19,7 +17,9 @@
       <td><%= visitor.name %></td>
       <td><%= visitor.email %></td>
       <td><%= visitor.isVerify %></td>
-      <td><%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" }, class:"btn btn-danger btn-xs" %></td>
+      <td>
+        <%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" }, class:"btn btn-danger btn-xs" if Visitor.find_visitor_account(session[:user]) == visitor.account %>
+      </td>
     </tr>
     <% end %>
   </tbody>

@@ -19,9 +19,9 @@ class VisitorsController < ApplicationController
   end
 
   def destroy
-    puts params
     @visitor = Visitor.find_by(id: params[:id])
     @visitor.destroy if @visitor
+    session[:user] = nil
     redirect_to visitors_path, notice: "訪客已刪除!"
   end
 

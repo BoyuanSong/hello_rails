@@ -1,5 +1,5 @@
 class Visitor < ApplicationRecord
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :account, :name, :email, :pw, presence: { message: "不可為空白" }
 
@@ -21,8 +21,16 @@ class Visitor < ApplicationRecord
     end
   end
 
+  def self.find_visitor_account(hash)
+    if hash.nil?
+      "沒登入"
+    else
+      hash["account"]
+    end
+  end
+
   def serialize
-    { "name" => name, "id"  => id }
+    { "name" => name, "id"  => id, "account" => account }
   end
 
   def get_pw
