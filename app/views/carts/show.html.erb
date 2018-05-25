@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% current_cart.items.each do |item| %>
+    <% (Cart.from_hash(session[:cart318])).items.each do |item| %>
       <tr>
         <td><%= item.product.title %></td>
         <td><%= item.quantity %></td>
@@ -24,7 +24,7 @@
   <tfood>
   <tr>
     <td colspan="3">總計</td>
-    <td><%= current_cart.total_price %></td>
+    <td><%= (Cart.from_hash(session[:cart318])).total_price %></td>
   </tfood>
 </table>
 
