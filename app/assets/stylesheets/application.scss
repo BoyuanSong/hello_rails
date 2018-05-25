@@ -14,10 +14,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+// 把網頁高度稱滿背景填色 --------------------------------------------------------
  html {
    height: 100%;
  }
-
  body {
    background-color: #eeeeee;
    height: 100%;
@@ -28,11 +28,43 @@
  .row {
    height: 100%;
  }
+// -----------------------------------------------------------------------------
+
+
+
+// 網頁內容區塊 -----------------------------------------------------------------
  #content {
    margin: 0px;
    background-color: white;
    height: 100%;
  }
+
+// 網頁內容標題
+ .page_title {
+   border-left: 5px #009FCC solid;
+   padding-left: 6px;
+   margin-bottom: 35px;
+ }
+
+// 網頁底部文字
+  .footer {
+      margin-bottom: 7px;
+      position:absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: #dddddd;
+      text-align: center;
+  }
+
+  .validate_errors {
+    color: red;
+  }
+// -----------------------------------------------------------------------------
+
+
+
+// 網頁側邊導覽列 ---------------------------------------------------------------
  #nav {
    padding-top: 30px;
    padding-left: 40px;
@@ -45,16 +77,19 @@
   margin-bottom: 3px;
   padding: 2px;
  }
+
+// 移到連結時的CSS效果
  #nav p:hover:not(.title) {
   text-decoration:none;
   background-color: #ffffff;
   border: 1px solid #dddddd;
  }
- .page_title {
-   border-left: 5px #009FCC solid;
-   padding-left: 6px;
- }
- nav.navbar {
+// -----------------------------------------------------------------------------
+
+
+
+// 網頁頂端部分 -----------------------------------------------------------------
+ nav.header {
    background-color: #6396bc;
    margin: 0px;
    height: 6%;
@@ -71,15 +106,4 @@
    margin-top: 8px;
    color: white;
  }
- .footer {
-     margin-bottom: 7px;
-     position:absolute;
-     left: 0;
-     bottom: 0;
-     width: 100%;
-     color: #dddddd;
-     text-align: center;
- }
- .validate_errors {
-   color: red;
- }
+// -----------------------------------------------------------------------------
