@@ -1,7 +1,7 @@
 class VisitorsController < ApplicationController
 
   def index
-    @visitors = Visitor.all
+    @visitors = Visitor.where("id > 1")
   end
 
   def new

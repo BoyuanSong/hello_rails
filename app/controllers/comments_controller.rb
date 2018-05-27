@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @comments = Comment.page(params[:page]).per(5)
     @comment = Comment.new
   end
 

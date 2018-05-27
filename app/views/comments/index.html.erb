@@ -21,6 +21,8 @@
   </tbody>
 </table>
 
+<%= paginate @comments %>
+
 <%= form_for(@comment) do |f| %>
   &nbsp&nbsp<%= Visitor.find_visitor(session[:user]) %><b> : </b>
   <%= f.text_field :content ,size: 40, maxlength:35 %>
