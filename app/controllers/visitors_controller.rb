@@ -41,6 +41,7 @@ class VisitorsController < ApplicationController
 
   def log_out
     session[:user] = nil
+    session[:cart318] = nil
     redirect_to visitors_path, notice: "登出成功"
   end
 
