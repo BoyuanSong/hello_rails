@@ -43,7 +43,7 @@
  .page_title {
    border-left: 5px #009FCC solid;
    padding-left: 6px;
-   margin-bottom: 35px;
+   margin-bottom: 30px;
  }
 
  // 網頁說明區塊
@@ -53,6 +53,9 @@
     border-left: 3px #FFBB00 solid;
     border-radius: 6px;
     padding-left: 6px;
+  }
+  .page_hint h3{
+    margin-top: 5px;
   }
 
 // 網頁底部文字

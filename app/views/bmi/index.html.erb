@@ -1,20 +1,14 @@
 <h1 class="page_title">BMI 計算機</h1>
 
 <%= form_for @bmi_calculator, url: '/bmi/result' do |f| %>
-  身高：<%= f.text_field :body_height ,size: 5, maxlength: 3%> 公分<br />
-  體重：<%= f.text_field :body_weight ,size: 5, maxlength: 3%> 公斤<br />
-  <%= f.submit "開始計算" %>
+  身高：<%= f.text_field :body_height , maxlength: 3%> 公分<br />
+  體重：<%= f.text_field :body_weight , maxlength: 3%> 公斤<br /><br />
+  <%= f.submit "開始計算", class: "btn btn-info btn-sm" %>
 <% end %>
 <br>
 
-<div class="page_hint">
-  <p>這邊我做了兩種的驗證</p>
-  <p>一種欄位是不可為空白</p>
-  <p>另一種是用正規表示式來確認輸入的是正確的數字</p>
-  <p>正規表示式的內容為 /\A[1-9]\d*\z/</p>
-  <p>確認輸入的是非0開頭的數字</P>
-  <p>應該沒寫錯吧?</p>
-</div>
+<p>這邊有兩種驗證, 一種欄位是不可空白, 另一種是用正規表示式來確認輸入的是非0開頭的數字</p>
+<P>正規表示式的內容為 /\A[1-9]\d*\z/, 會依據錯誤類型回傳錯誤結果</P>
 
 <div class="validate_errors">
   <% if @bmi_calculator.errors.any? %>
