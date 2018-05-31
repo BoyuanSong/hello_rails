@@ -16,7 +16,33 @@
   <tbody>
     <% @candidates.each do |candidate| %>
     <tr>
-      <td><%= link_to "投給這位", vote_candidate_path(candidate), method: "post", data: { confirm: "確定投給這個人?" }, class:"btn btn-danger btn-xs" %></td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter<%= candidate.id %>">
+          投給這位
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter<%= candidate.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                確定要投給<%= candidate.name %>嗎?
+              </div>
+              <div class="modal-footer">
+                <%= link_to "確定", vote_candidate_path(candidate), method: "post", class:"btn btn-primary btn-sm" %>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">取消</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </td>
       <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
       <td><%= candidate.party %></td>
       <td><%= candidate.politics %></td>
@@ -31,4 +57,4 @@
 </table>
 <br>
 <br>
-<p>完全沒做更改,都跟範例一樣而已</p>
+<p>這邊利用bootstrap的modal做出一個確認用的彈跳視窗</p>
