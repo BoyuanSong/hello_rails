@@ -1,5 +1,6 @@
 class VisitorsController < ApplicationController
 
+  # 無登入用訪客帳號為id:1, 取得訪客清單時避掉這個
   def index
     @visitors = Visitor.where("id > 1")
   end
@@ -11,13 +12,16 @@ class VisitorsController < ApplicationController
   def create
     @visitor = Visitor.new(params.require(:visitor).permit(:account, :pw, :name, :email))
 
-    if @visitor.save # 成功
+    # 成功
+    if @visitor.save
       redirect_to visitors_path, notice: "新增資料成功!"
-    else # 失敗
+    # 失敗
+    else
       render :new
     end
   end
 
+  # 設計是只能刪自己的帳號 可看到自己留言一起被刪
   def destroy
     @visitor = Visitor.find_by(id: params[:id])
     @visitor.destroy if @visitor
@@ -44,5 +48,4 @@ class VisitorsController < ApplicationController
     session[:cart318] = nil
     redirect_to visitors_path, notice: "登出成功"
   end
-
 end

@@ -9,9 +9,9 @@
 # 訪客
 Visitor.delete_all
 Visitor.create(account: "no_log_in", pw: "aw10401", name: "訪客", email: "daisycheng@hotmail.com")
-Visitor.create(account: "000000", pw: "ahj10401", name: "廖靜廷", email: "jintin@hotmail.com")
-Visitor.create(account: "aa10403", pw: "aahj10401", name: "吳啟全", email: "lee31620@hotmail.com")
-Visitor.create(account: "aa10404", pw: "ahja10401", name: "李天照", email: "wt11330@hotmail.com")
+Visitor.create(account: "000000", pw: "000000", name: "廖靜廷", email: "jintin@hotmail.com")
+Visitor.create(account: "111111", pw: "111111", name: "吳啟全", email: "lee31620@hotmail.com")
+Visitor.create(account: "222222", pw: "222222", name: "李天照", email: "wt11330@hotmail.com")
 Visitor.create(account: "aa10405", pw: "aahj10401", name: "張韻華", email: "cheng791112@hotmail.com")
 Visitor.create(account: "aa10406", pw: "aafe401", name: "郭書欽", email: "guogogo@hotmail.com")
 
@@ -19,12 +19,12 @@ Visitor.create(account: "aa10406", pw: "aafe401", name: "郭書欽", email: "guo
 # 留言
 Comment.delete_all
 Visitor.find_by(account: "no_log_in").comments.create(content: "路過到此一遊")
-Visitor.find_by(account: "aa10403").comments.create(content: "這網站也寫得太好了吧")
-Visitor.find_by(account: "aa10404").comments.create(content: "網站的美術風格很簡潔又不失美感")
-Visitor.find_by(account: "aa10405").comments.create(content: "你好,網站寫得不錯希望能繼續加油")
+Visitor.find_by(account: "000000").comments.create(content: "這網站也寫得太好了吧")
+Visitor.find_by(account: "111111").comments.create(content: "網站的美術風格很簡潔又不失美感")
+Visitor.find_by(account: "222222").comments.create(content: "你好,網站寫得不錯希望能繼續加油")
 Visitor.find_by(account: "aa10406").comments.create(content: "網站功能還有些地方能補強一下")
 Visitor.find_by(account: "no_log_in").comments.create(content: "試試看留言功能而已")
-Visitor.find_by(account: "aa10403").comments.create(content: "網站寫得還行")
+Visitor.find_by(account: "aa10405").comments.create(content: "網站寫得還行")
 
 
 # 投票系統
