@@ -18,7 +18,30 @@
       <td><%= visitor.email %></td>
       <td><%= visitor.isVerify %></td>
       <td>
-        <%= link_to "刪除", visitor_path(visitor), method: "delete", data: { confirm: "確認刪除" }, class:"btn btn-danger btn-xs" if Visitor.find_visitor_account(session[:user]) == visitor.account %>
+        <% if Visitor.find_visitor_account(session[:user]) == visitor.account %>
+          <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#exampleModalCenter">
+            刪除
+          </button>
+        <% end %>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                刪除後無法復原, 確認刪除嗎?
+              </div>
+              <div class="modal-footer">
+                <%= link_to "刪除", visitor_path(visitor), method: "delete", class:"btn btn-primary btn-xs"%>
+                <button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">取消</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </td>
     </tr>
     <% end %>

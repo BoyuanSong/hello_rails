@@ -34,7 +34,7 @@
                 刪除後無法復原, 確認刪除嗎?
               </div>
               <div class="modal-footer">
-                <%= link_to "確認", comment_path(comment), method: "delete", class: "btn btn-primary btn-xs" if Visitor.find_visitor_account(session[:user]) == comment.visitor.account %>
+                <%= link_to "確認", comment_path(comment), method: "delete", class: "btn btn-primary btn-xs" %>
                 <button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">取消</button>
               </div>
             </div>
