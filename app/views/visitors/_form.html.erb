@@ -1,15 +1,30 @@
 <%= form_for(visitor) do |f| %>
-  <%= f.label :account, "帳號 Account :" %>
-  <%= f.text_field :account ,size: 18, maxlength: 12 %> <br />
+  <div class="form-group">
+    <%= f.label :account, "帳號 Account :" , class:"col-sm-2" %>
+    <%= f.text_field :account , maxlength: 12 , class:"col-sm-3" ,'aria-describedby':"accountHelpInline"%>
+    <small id="accountHelpInline" class="text-muted">
+      &nbsp&nbsp Must be 6-12 characters long.
+    </small><br />
+  </div>
 
-  <%= f.label :pw, "密碼 Pw :" %>
-  <%= f.password_field :pw ,size: 23, maxlength: 12%> <br />
+  <div class="form-group">
+    <%= f.label :pw, "密碼 Pw :", class:"col-sm-2" %>
+    <%= f.password_field :pw , maxlength: 12, class:"col-sm-3" ,'aria-describedby':"pwHelpInline"%>
+    <small id="pwHelpInline" class="text-muted">
+      &nbsp&nbsp Must be 6-12 characters long.
+    </small><br />
+  </div>
 
-  <%= f.label :name, "姓名 Name :" %>
-  <%= f.text_field :name ,size: 20 ,maxlength: 10%> <br />
+  <div class="form-group">
+    <%= f.label :name, "姓名 Name :" , class:"col-sm-2"%>
+    <%= f.text_field :name ,size: 20 ,maxlength: 10, class:"col-sm-3"%> <br />
+  </div>
 
-  <%= f.label :email, "信箱 Email :" %>
-  <%= f.text_field :email, maxlength: 20 %> <br />
-
-  <%= f.submit '送出資料' %>
+  <div class="form-group">
+    <%= f.label :email, "信箱 Email :" , class:"col-sm-2"%>
+    <%= f.text_field :email, maxlength: 20, class:"col-sm-3" %> <br />
+  </div>
+  <div class="form-group">
+    &nbsp&nbsp&nbsp<%= f.submit '送出資料' ,class:"btn btn-primary"%>
+  </div>
 <% end %>
