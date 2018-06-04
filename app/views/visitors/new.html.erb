@@ -1,11 +1,10 @@
 <h1 class="page_title">新增訪客</h1>
 <br>
 <%= render "form", visitor: @visitor %>
-
-<br/>
+<br>
 <p>這邊我做了一些驗證處理</p>
 <p>欄位不可為空.帳號密碼需要6-12碼.信箱需要正確的格式</P>
-
+<p>送出資料不通過會有錯誤訊息</p>
 
 <% if @visitor.errors.any? %>
   <div class="page_invalid col-sm-8">
