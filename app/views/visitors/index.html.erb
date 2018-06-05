@@ -6,7 +6,6 @@
       <td>帳號</td>
       <td>姓名</td>
       <td>信箱</td>
-      <td>認證</td>
       <td><%= link_to "新增訪客", new_visitor_path, class:"btn btn-primary btn-xs" %></td>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
         <td><%= visitor.account %></td>
         <td><%= visitor.name %></td>
         <td><%= visitor.email %></td>
-        <td><%= visitor.isVerify %></td>
         <td>
           <% if Visitor.find_visitor_account(session[:user]) == visitor.account %>
             <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#exampleModalCenter">刪除</button>
