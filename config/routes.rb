@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post "bmi/result", to: "bmi#result"
 
   root "welcome#index"
+  get "intro", to: "welcome#intro"
 
   resources :candidates do
     member do
