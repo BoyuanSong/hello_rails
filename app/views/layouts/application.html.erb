@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <nav class="header">
+    <nav class="header navbar-fixed-top">
       <div class="container">
         <h1 id="logo"><b>BoYen</b></h1>
         <p class="nav navbar-right">
@@ -21,22 +21,20 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-2" id="nav">
-          <p><%= link_to '關於我', root_path %></p>
-          <p><%= link_to '網頁簡介', intro_path %></p>
+          <%= link_to '<p>關於我</p>'.html_safe, root_path %>
+          <%= link_to '<p>網頁簡介</p>'.html_safe, intro_path %>
           <p class="title">個人練習</P>
-          <p><%= link_to '留言板', comments_path %></p>
-          <p><%= link_to '訪客', visitors_path %></p>
+          <%= link_to '<p>留言板</p>'.html_safe, comments_path %>
+          <%= link_to '<p>訪客</p>'.html_safe, visitors_path %>
           <p class="title">課本範例練習</P>
-          <p><%= link_to '投票系統', candidates_path %></p>
-          <p><%= link_to '購物車', products_path %></p>
-          <p><%= link_to 'BMI', bmi_path %></p>
+          <%= link_to '<p>投票系統</p>'.html_safe, candidates_path %>
+          <%= link_to '<p>購物車</p>'.html_safe, products_path %>
+          <%= link_to '<p>BMI</p>'.html_safe, bmi_path %>
         </div>
         <div class="col-sm-10" id="content">
           <%= yield %>
           <%= notice %>
-          <div class="footer">
-            Copyright © sby318@gmail.com. All rights reserved.
-          </div>
+          <div class="footer">Copyright © sby318@gmail.com. All rights reserved.</div>
         </div>
       </div>
     </div>
