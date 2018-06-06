@@ -2,7 +2,7 @@ class VisitorsController < ApplicationController
 
   # 無登入用訪客帳號為id:1, 取得訪客清單時避掉這個
   def index
-    @visitors = Visitor.where("id > 1")
+    @visitors = Visitor.page(params[:page]).per(5).where("id > 1")
   end
 
   def new

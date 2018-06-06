@@ -2,7 +2,7 @@ class CandidatesController < ApplicationController
   before_action :find_candidate, only: [:edit, :update, :destroy, :vote]
 
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.page(params[:page]).per(5)
   end
 
   def vote
