@@ -104,8 +104,15 @@
  #nav p:hover:not(.title) {
   text-decoration:none;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
  }
+// 點住時變暗
+ #nav p:active:not(.title) {
+  text-decoration:none;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+ }
+
 // -----------------------------------------------------------------------------
 
 
