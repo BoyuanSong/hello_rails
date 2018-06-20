@@ -4,4 +4,4 @@
 
 除了課本範例外還有做些修改和自己的其他練習
 
-網站架設在 https://sby318.herokuapp.com/
+網站架設在 https://boyen-ruby.herokuapp.com/
