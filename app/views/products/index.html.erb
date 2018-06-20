@@ -1,14 +1,15 @@
 <h1 class="page_title">商品列表</h1>
-
-<%= link_to '新增商品', new_product_path, class: "btn btn-default btn-primary" %>
-<%= link_to '購物車', cart_path, class: "btn btn-default btn-success" %>
-
+<br>
+<%= link_to '新增商品', new_product_path, class: "btn btn-default btn-primary btn-sm" %>
+<%= link_to '購物車', cart_path, class: "btn btn-default btn-success btn-sm" %>
+<br>
+<br>
 <table class="table table-hover">
   <thead>
     <tr>
       <td>商品名稱</td>
       <td>售價</td>
-      <td>處理</td>
+      <td></td>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +22,7 @@
       <td><%= product.price %></td>
       <td>
         <%= link_to '編輯', edit_product_path(product), class: "btn btn-xs btn-default" %>
-        <%= link_to '刪除', product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
+        <!--<%= link_to '刪除', product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>-->
       </td>
     </tr>
     <% end %>
@@ -29,6 +30,9 @@
 </table>
 <br>
 <br>
-<p>這邊跟原始範例一樣沒有做修改, 購物車是放在session當中</p>
+<p>上面是一些我看過但沒完整看完的書</p>
+<p>這邊我把新增和編輯的確認鍵拿掉了, 商品是用seeds新增的</p>
+<p>購物車的商品是放在session, 不是存到資料庫裡</p>
 <p>原先想串連訪客帳號的部分, 然後再加結帳完成訂單和金流的部分</p>
 <p>最後決定另外做一個網站來完成這個規劃</p>
+<br>

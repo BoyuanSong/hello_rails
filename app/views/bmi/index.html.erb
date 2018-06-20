@@ -1,5 +1,5 @@
 <h1 class="page_title">BMI 計算機</h1>
-
+<br>
 <%= form_for @bmi_calculator, url: '/bmi/result' do |f| %>
   <div class="form-group">
     <%= f.label :body_height, "身高：", class:"col-sm-1" %>
@@ -12,7 +12,8 @@
   &nbsp&nbsp&nbsp<%= f.submit "開始計算", class: "btn btn-info btn-sm" %>
 <% end %>
 <br>
-
+<br>
+<br>
 <p>這邊有兩種驗證, 一種欄位是不可空白, 另一種是用正規表示式來確認輸入的是非0開頭的數字</p>
 <P>正規表示式的內容為 /\A[1-9]\d*\z/, 會依據錯誤類型回傳錯誤結果</P>
 <br>
