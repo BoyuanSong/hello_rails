@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HelloRails</title>
+    <title>Boyen-Ruby</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <nav class="header navbar-fixed-top">
-      <div class="container">
-        <h1 id="logo"><b>BoYen</b></h1>
-        <p class="nav navbar-right">
-          <b>&nbsp&nbsp<%= Visitor.find_visitor(session[:user])%> 你好</b>
-          <%= link_to "登入", log_visitors_path, class:"btn btn-info btn-xs" if session[:user] == nil%>
-          <%= link_to "登出", log_out_visitors_path, class:"btn btn-warning btn-xs" if session[:user] != nil%>
-        </p>
-      </div>
-    </nav>
+    <%= render partial: 'layouts/header' %>
     <div class="container">
       <div class="row">
         <div class="col-sm-2" id="nav">
-          <%= link_to '<p>關於我</p>'.html_safe, root_path %>
-          <%= link_to '<p>網頁簡介</p>'.html_safe, intro_path %>
-          <p class="title">個人練習</P>
-          <%= link_to '<p>留言板</p>'.html_safe, comments_path %>
-          <%= link_to '<p>訪客</p>'.html_safe, visitors_path %>
-          <p class="title">課本範例練習</P>
-          <%= link_to '<p>投票系統</p>'.html_safe, candidates_path %>
-          <%= link_to '<p>購物車</p>'.html_safe, products_path %>
-          <%= link_to '<p>BMI</p>'.html_safe, bmi_path %>
+          <%= render partial: 'layouts/nav' %>
         </div>
         <div class="col-sm-10" id="content">
           <%= yield %>

@@ -1,0 +1,10 @@
+<nav class="header navbar-fixed-top">
+  <div class="container">
+    <h1 id="logo"><b>BoYen</b></h1>
+    <p class="nav navbar-right">
+      <b><%= Visitor.find_visitor(session[:user])%> 你好</b>
+      <%= link_to "登入", log_visitors_path, class:"btn btn-info btn-xs" if session[:user] == nil%>
+      <%= link_to "登出", log_out_visitors_path, class:"btn btn-warning btn-xs" if session[:user] != nil%>
+    </p>
+  </div>
+</nav>
