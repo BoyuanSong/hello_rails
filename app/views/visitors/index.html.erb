@@ -3,7 +3,6 @@
 <table class="table">
   <thead>
     <tr>
-      <td>帳號</td>
       <td>姓名</td>
       <td>信箱</td>
       <td><%= link_to "新增訪客", new_visitor_path, class:"btn btn-primary btn-xs" %></td>
@@ -12,7 +11,6 @@
   <tbody>
     <% @visitors.each do |visitor| %>
       <tr>
-        <td><%= visitor.account %></td>
         <td><%= visitor.name %></td>
         <td><%= visitor.email %></td>
         <td>
